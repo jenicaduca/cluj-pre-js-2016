@@ -3,7 +3,7 @@
   position: relative;
 }
 
-#photo_top{
+.photo_top{
   vertical-align: top;
   margin-left: 200px;
 }
@@ -221,12 +221,39 @@ td,th{
 }
 
 .photo_devices{
-  width: 200px;
+  width: 600px;
   display: inline-block;
+  margin-left: 1025px;
+  position: relative;
+  margin-top: -300px;
+
 }
+
+
 .text_negru2{
   color: #000;
   font-weight: bold;
   font-size: 20px;
 
+}
+
+.align2{
+  margin-top: 100px;
+}
+
+.logo-fin{
+  width: 100px;
+  height: 60px;
+margin-right: 50px;
+margin-left: -50px;
+margin-top: 30px;
+}
+
+.footer2{
+  float: left;
+  position: relative;
+  margin-top: -20px;
+  margin-left: 200px;
+  font-size: 13px;
+  color: #808080;
 }

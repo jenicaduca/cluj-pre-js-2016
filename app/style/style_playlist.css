@@ -59,7 +59,7 @@
 
 }
 
-.button{
+.button1{
   display: inline-block;
   background-color: #00BFFF;
   border-radius: 4px;
@@ -79,15 +79,28 @@
 
 }
 
+.contine-playlist{
 
+  width: 300px;
+  height: 200px;
+  /*transition: all 1s linear;*/
+  transition: 0.5px;
+  /*margin-top: -40px;*/
+}
+
+/*.contine-playlist:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+}*/
 
 .pozz{
   width: 300px;
   height: 200px;
-  transition: all 1s linear;
+  /*transition: all 1s linear;*/
+  transition: 0.5px;
 }
 
 .playlist{
+  position: relative;
   display: inline-block;
   background-color: #FFF;
   height: 300px;
@@ -95,19 +108,19 @@
   border-collapse: collapse;
   border: 1px solid #B0E0E6;
   margin-right: 40px;
-  transition: all 1s linear;
+  /*transition: all 1s linear;*/
+  transition: 0.5px;
+
 
 }
 
 .playlist:hover {
-	width: 400px;
-	height: 400px;
+	/*width: 400px;
+	height: 400px;*/
   box-shadow: 10px 10px 5px #888888;
-}
+  background-color: rgba(0, 0, 0, 0.3);
 
-.pozz:hover {
-	width: 400px;
-	height: 300px;
+  transform: translate(0, -15px);
 }
 
 .text-gri {
@@ -123,11 +136,9 @@
 
 .toate-playlisturile{
     display: inline-block;
-    margin-top: -130px;
+    margin-top: -80px;
     position: relative;
     margin-left: -200px;
-
-
 }
 
 .bottom-page{
@@ -136,6 +147,74 @@
 }
 
 .footer{
-  float: left;
-  margin-top: 400px;
+  /*float: left;*/
+  margin-top: 200px;
+  display: block;
+  margin-left: -1000px;
 }
+
+.playlist button{
+  visibility: hidden;
+  position: absolute;
+  margin-top: -200px;
+  margin-left: -80px;
+}
+
+
+.element-creator{
+  background-color: #00BFFF;
+  /*background-image: url("../../core/assets/play-icon.jpg");*/
+  border-radius: 4px;
+  height:34px;
+  width:200px;
+  color: #FFF;
+
+}
+
+.playlist:hover button{
+   visibility: visible;
+}
+
+
+.lista-melodi{
+  height: 0px;
+  width: 600px;
+  border-collapse: collapse;
+  border: 1px solid #000;
+  margin-bottom: -400px;
+  background-color: #FFF;
+}
+
+.lista-melodi:hover{
+  transform: translate(0, -600px);
+  height: 600px;
+  /*background-color: #00BFFF;*/
+
+}
+
+.top-lista{
+  display: inline-block;
+  background-color: #DCDCDC;
+  height: 100px;
+  width: 600px;
+}
+
+/*------*/
+
+/*#card-area {
+  position: relative;
+	overflow: hidden;
+	/*border: 1px dashed #ff4dd2;*/
+	/*margin-top: 100px;*/
+	/*min-height: 100px;
+}
+
+
+.card {
+	margin-left: 10px;
+	float: left;
+	height: 100px;
+	width: 100px;
+	background-color: #66ff33;
+	border: 1px solid #ffb3ff;
+}*/

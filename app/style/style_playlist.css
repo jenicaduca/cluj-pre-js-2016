@@ -142,6 +142,7 @@
 }
 
 .bottom-page{
+  position: relative;
   background-color: #FFF;
   text-align: center;
 }
@@ -176,45 +177,50 @@
 }
 
 
-.lista-melodi{
+/*.lista-melodi{
   height: 0px;
   width: 600px;
   border-collapse: collapse;
   border: 1px solid #000;
   margin-bottom: -400px;
   background-color: #FFF;
-}
+}*/
 
-.lista-melodi:hover{
-  transform: translate(0, -600px);
-  height: 600px;
-  /*background-color: #00BFFF;*/
 
-}
 
 .top-lista{
   display: inline-block;
   background-color: #DCDCDC;
-  height: 100px;
+  height: 150px;
   width: 600px;
 }
 
-/*------*/
-
-/*#card-area {
-  position: relative;
-	overflow: hidden;
-	/*border: 1px dashed #ff4dd2;*/
-	/*margin-top: 100px;*/
-	/*min-height: 100px;
+.playlist-pozz{
+  display: inline-block;
+  height: 150px;
+  margin-left: -350px;
 }
 
+.playlist-title{
+   margin-top: -100px;
+   margin-left: -20px;
 
-.card {
-	margin-left: 10px;
-	float: left;
-	height: 100px;
-	width: 100px;
-	background-color: #66ff33;
-	border: 1px solid #ffb3ff;
-}*/
+}
+
+.text-negru-playlist{
+  color: #000;
+  font-size: 30px;
+  margin-left: 100px;
+}
+
+#theDiv{
+  height: 600px;
+  width: 600px;
+  background-color: #FFF;
+  border-collapse: collapse;
+  border: 1px solid #000;
+  visibility: hidden;
+  position: absolute;
+  margin-top: -600px;
+
+}

@@ -10,7 +10,9 @@ body{
   /*display: inline-block;*/
 }
 
-
+.focuss{
+  background-color: #A9A9A9;
+}
 
 
 
@@ -35,4 +37,8 @@ body{
   background-color: #00BFFF;
   border-radius: 5px;
 
+}
+
+#mesageLogin{
+  color: #F00;
 }

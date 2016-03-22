@@ -6,10 +6,16 @@ document.getElementById('focuss1').focus();
 
 
 // schimba culoarea la click pt formular
-function change() {
-    var x = document.getElementsByClassName("focuss");
-    var i;
-    for (i = 0; i < x.length; i++) {
-    x[i].style.backgroundColor = "#ADD8E6";
+function change(ids) {
+  var x = document.getElementById(ids);
+  if(x != null){
+    x.style.backgroundColor = "#ADD8E6";
+  }
+}
+
+function changeBack(ids) {
+  var x = document.getElementById(ids);
+  if(x != null){
+    x.style.backgroundColor = "#A9A9A9";
   }
 }

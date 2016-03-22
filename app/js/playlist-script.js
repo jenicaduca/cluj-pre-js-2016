@@ -1,6 +1,74 @@
 
 var parsatPlaylist=JSON.parse(playlistsJSON);
 
+nrPlaylist = parsatPlaylist.length;
+
+
+
+function Song(dataSong){
+   this.image = dataSong.image;
+   this.songAuthorauthor = dataSong.songAuthor;
+   this.songLength = dataSong.songLength;
+   this.songListened = dataSong.songListened;
+   this.songTitle = dataSong.songTitle;
+}
+
+
+// function get for Song
+Song.prototype.getImage = function(){
+   return this.image;
+ };
+
+ Song.prototype.getSongTitle = function(){
+    return this.songTitle;
+  };
+Song.prototype.getSongLength = function(){
+   return this.songLength;
+ };
+
+ Song.prototype.getSongListened = function(){
+    return this.songListened;
+  };
+
+ Song.prototype.getSongAuthor = function(){
+   return this.songAuthor;
+ };
+
+// function set for Song
+Song.prototype.setImage = function(imag){
+   this.image = imag;
+ };
+
+ Song.prototype.setSongTitle = function(titlu){
+    this.songTitle = titlu;
+  };
+Song.prototype.setSongLength = function(len){
+   this.songLength = len;
+ };
+
+ Song.prototype.getSongListened = function(lis){
+    this.songListened = lis;
+  };
+
+ Song.prototype.getSongAuthor = function(auth){
+   this.songAuthor = auth;
+ };
+
+function Playlist(dataPlaylist){
+  // this.id = dataPlaylist.id;
+  // this.title = dataPlaylist.title;
+  this.songs = [];
+
+}
+
+
+Playlist.prototype.addSong = function(songAdded){
+  this.songs.push(songAdded);
+
+}
+
+var newPlaylist = new Playlist();
+// newPlaylist.addSong("as");
 
 // pt playlist-page
 function afisare(id){
@@ -14,48 +82,9 @@ function afisare(id){
      obj.style.visibility = 'visible';
   }
 
-
-  console.log(parsatPlaylist);
-
   for (var i=0; i < parsatPlaylist[0].songs.length; i++)
   {
     var song= new Song(parsatPlaylist[0].songs[i]);
+  
   }
-}
-
-function Song(dataSong){
-   this.image = dataSong.image;
-   this.songAuthorauthor = dataSong.songAuthor;
-   this.songLength = dataSong.songLength;
-   this.songListened = dataSong.songListened;
-   this.songTitle = dataSong.songTitle;
-}
-
-Song.prototype.getImagee(image){
-   return image;
- }
-
- Song.prototype.getSongTitle(songTitle){
-    return songTitle;
-  }
-Song.prototype.getSongLength(songLength){
-   return songLength;
- }
-
- Song.prototype.getSongListened(songListened){
-    return songListened;
-  }
-
- Song.prototype.getSongAuthor(songAuthor){
-   return songAuthor;
- }
-
-function Playlist(dataPlaylist){
-  this.id = dataPlaylist.id;
-  this.songs = [];
-  this.title = dataPlaylist.itle;
-}
-
-Playlist.prototype.addSong=function(songAdded){
-  this.songs.push(songAdded);
 }

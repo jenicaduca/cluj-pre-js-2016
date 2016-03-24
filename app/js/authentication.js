@@ -6,16 +6,14 @@ function Users(dataUsers){
   this.pass = dataUsers.password;
 }
 
-/// validare
 
-function verifica(){
+function Authentication (){
   var nrUsers = parseUsers.length;
    var bool= true;
    var emailDiv= document.getElementById("formText1").value;
    var passDiv= document.getElementById("formText2").value;
 
-    for(var i = 0; i < nrUsers; i++)
-        {
+    for (var i = 0; i < nrUsers; i++) {
           if (parseUsers[i].email == emailDiv)
                {
                  if(parseUsers[i].password == passDiv)

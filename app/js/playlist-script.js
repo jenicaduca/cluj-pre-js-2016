@@ -1,7 +1,21 @@
 
-var parsatPlaylist=JSON.parse(playlistsJSON);
+var parsedPlaylist=JSON.parse(playlistsJSON);
 
-nrPlaylist = parsatPlaylist.length;
+nrPlaylist = parsedPlaylist.length;
+
+
+
+function Playlist(dataPlaylist){
+  this.id = dataPlaylist.id;
+  this.title = dataPlaylist.title;
+  this.image = dataPlaylist.image;
+  this.songs = [];
+  for(var i=0; i< dataPlaylist.songs.length; i++){
+
+       this.songs.push(new Song(dataPlaylist.songs[i]));
+   }
+
+}
 
 
 
@@ -54,21 +68,14 @@ Song.prototype.setSongLength = function(len){
    this.songAuthor = auth;
  };
 
-function Playlist(dataPlaylist){
-  // this.id = dataPlaylist.id;
-  // this.title = dataPlaylist.title;
-  this.songs = [];
 
+var playlist=[];
+var songList =[];
+
+for( var i = 0; i < nrPlaylist; i++){
+    playlist[i]=new Playlist(parsedPlaylist[i]);
+    console.log(playlist[i]);
 }
-
-
-Playlist.prototype.addSong = function(songAdded){
-  this.songs.push(songAdded);
-
-}
-
-var newPlaylist = new Playlist();
-// newPlaylist.addSong("as");
 
 // pt playlist-page
 function afisare(id){
@@ -81,10 +88,28 @@ function afisare(id){
      {
      obj.style.visibility = 'visible';
   }
+console.log(parsedPlaylist[0]);
+var listEl =document.getElementById('mySongs');
+createPlaylist(parsedPlaylist[0].songs, listEl);
 
-  for (var i=0; i < parsatPlaylist[0].songs.length; i++)
-  {
-    var song= new Song(parsatPlaylist[0].songs[i]);
-  
+}
+
+// var nrSongs = parsedPlaylist[0].songs.length;
+
+function createPlaylist(Playlist, listElement ){
+
+  for(var i=0; i < Playlist.length; i++){
+        var newP = document.createElement("P");
+        // var newDiv = document.createElement('afisAtr');
+
+        newP.innerHTML = Playlist[i].image;
+        newP.innerHTML = Playlist[i].songTitle;
+        newP.innerHTML = Playlist[i].songAuthor;
+        newP.innerHTML = Playlist[i].songLength;
+        newP.innerHTML = Playlist[i].songListened;
+
+        document.getElementById("afisAtr").appendChild(newP);           // Append <p> to <div> with id="myDIV"
+        // newDiv.insertBefore(document.createElement("p"), newDiv.firstChild);
+        // listElement.appendChild(newDiv);
   }
 }

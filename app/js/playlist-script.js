@@ -21,7 +21,7 @@ function Playlist(dataPlaylist){
 
 function Song(dataSong){
    this.image = dataSong.image;
-   this.songAuthorauthor = dataSong.songAuthor;
+   this.songAuthor = dataSong.songAuthor;
    this.songLength = dataSong.songLength;
    this.songListened = dataSong.songListened;
    this.songTitle = dataSong.songTitle;
@@ -96,20 +96,29 @@ createPlaylist(parsedPlaylist[0].songs, listEl);
 
 // var nrSongs = parsedPlaylist[0].songs.length;
 
+var transformInMinutes = function (val){
+  var min = val / 60;
+  var minute = min.toFixed(0) + ":" + val % 60;
+  return minute;
+};
+
 function createPlaylist(Playlist, listElement ){
 
-  // for(var i=0; i < Playlist.length; i++){
-        var newP = document.createElement("P");
-        var newDiv = document.createElement('afisAtr');
+  for(var i=0; i < Playlist.length; i++){
+        // var newP = document.createElement("P");
+        // var newDiv = document.createElement('afisAtr');
+        var newDiv = document.createElement('div');
 
-        newP.innerHTML = Playlist[0].image;
-        newP.innerHTML = Playlist[0].songTitle;
-        newP.innerHTML = Playlist[0].songAuthor;
-        newP.innerHTML = Playlist[0].songLength;
-        newP.innerHTML = Playlist[0].songListened;
+        newDiv.innerHTML =  '<img src= "' + Playlist[i].image +'"> '+ " title: "+ Playlist[i].songTitle + " Author: " + Playlist[i].songAuthor + " Length: " + transformInMinutes(Playlist[i].songLength) + " Listened " +  Playlist[i].songListened;
 
-        // document.getElementById("afisAtr").appendChild(newP);           // Append <p> to <div> with id="afisAtr"
-        newDiv.insertBefore(document.createElement("P"), newDiv.firstChild);
+        // newP.innerHTML = Playlist[i].image;
+        // newP.innerHTML = Playlist[i].songTitle;
+        // newP.innerHTML = Playlist[i].songAuthor;
+        // newP.innerHTML = Playlist[i].songLength;
+        // newP.innerHTML = Playlist[i].songListened;
+
+        document.getElementById("afisAtr").appendChild(newDiv);           // Append <p> to <div> with id="afisAtr"
+        // newDiv.insertBefore(document.createElement("P"), newDiv.firstChild);
         // listElement.appendChild(newDiv);
-  // }
+  }
 }

@@ -98,18 +98,18 @@ createPlaylist(parsedPlaylist[0].songs, listEl);
 
 function createPlaylist(Playlist, listElement ){
 
-  for(var i=0; i < Playlist.length; i++){
+  // for(var i=0; i < Playlist.length; i++){
         var newP = document.createElement("P");
-        // var newDiv = document.createElement('afisAtr');
+        var newDiv = document.createElement('afisAtr');
 
-        newP.innerHTML = Playlist[i].image;
-        newP.innerHTML = Playlist[i].songTitle;
-        newP.innerHTML = Playlist[i].songAuthor;
-        newP.innerHTML = Playlist[i].songLength;
-        newP.innerHTML = Playlist[i].songListened;
+        newP.innerHTML = Playlist[0].image;
+        newP.innerHTML = Playlist[0].songTitle;
+        newP.innerHTML = Playlist[0].songAuthor;
+        newP.innerHTML = Playlist[0].songLength;
+        newP.innerHTML = Playlist[0].songListened;
 
-        document.getElementById("afisAtr").appendChild(newP);           // Append <p> to <div> with id="myDIV"
-        // newDiv.insertBefore(document.createElement("p"), newDiv.firstChild);
+        // document.getElementById("afisAtr").appendChild(newP);           // Append <p> to <div> with id="afisAtr"
+        newDiv.insertBefore(document.createElement("P"), newDiv.firstChild);
         // listElement.appendChild(newDiv);
-  }
+  // }
 }

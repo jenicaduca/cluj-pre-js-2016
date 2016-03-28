@@ -34,7 +34,7 @@ function Authentication (){
                    {
 
                     //  document.getElementById("mesageLogin").innerHTML = "login succes!!";
-                    window.location.assign = ('file:///home/jenica.duca/work/cluj-pre-js-2016/app/playlist_page.html');
+                   window.location.replace = ("file:///home/jenica.duca/work/cluj-pre-js-2016/app/playlist_page.html");
                      break;
                   }
                  else

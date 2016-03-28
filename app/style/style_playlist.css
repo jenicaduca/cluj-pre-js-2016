@@ -214,7 +214,7 @@
 }
 
 #theDiv{
-  height: 600px;
+  height: 650px;
   width: 600px;
   background-color: #FFF;
   border-collapse: collapse;
@@ -234,4 +234,24 @@
 .boxcolse: hover{
   width: 15px;
   height: 15px;
+}
+
+
+td,th{
+  border-bottom: 1px solid #D3D3D3;
+}
+
+.tableSongs{
+  width: 600px;
+}
+
+#topTable{
+  background-color: #D3D3D3;
+}
+
+.changeBlue {
+  background-color: #FFF;
+}
+.changeBlue : hover{
+  background-color: #ADD8E6;
 }

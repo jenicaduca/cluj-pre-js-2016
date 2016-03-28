@@ -104,21 +104,36 @@ var transformInMinutes = function (val){
 
 function createPlaylist(Playlist, listElement ){
 
+  var table1 = document.getElementsByTagName('table')[0];
+
+  var atributes = [];
+
   for(var i=0; i < Playlist.length; i++){
-        // var newP = document.createElement("P");
-        // var newDiv = document.createElement('afisAtr');
-        var newDiv = document.createElement('div');
 
-        newDiv.innerHTML =  '<img src= "' + Playlist[i].image +'"> '+ " title: "+ Playlist[i].songTitle + " Author: " + Playlist[i].songAuthor + " Length: " + transformInMinutes(Playlist[i].songLength) + " Listened " +  Playlist[i].songListened;
+        var row =  document.createElement('tr');
+        atributes[0] = Playlist[i].image;
+        atributes[1] = Playlist[i].songTitle;
+        atributes[2] = Playlist[i].songAuthor;
+        atributes[3] = transformInMinutes(Playlist[i].songLength);
+        atributes[4] = Playlist[i].songListened;
 
-        // newP.innerHTML = Playlist[i].image;
-        // newP.innerHTML = Playlist[i].songTitle;
-        // newP.innerHTML = Playlist[i].songAuthor;
-        // newP.innerHTML = Playlist[i].songLength;
-        // newP.innerHTML = Playlist[i].songListened;
 
-        document.getElementById("afisAtr").appendChild(newDiv);           // Append <p> to <div> with id="afisAtr"
-        // newDiv.insertBefore(document.createElement("P"), newDiv.firstChild);
-        // listElement.appendChild(newDiv);
+
+        for (var j = 0; j < 5 ; j++){
+              var element = document.createElement("td");
+           if(j === 0){
+             // for image
+             element.innerHTML ='<img src= "'+ atributes[0]+'">';
+           }
+            else if( j === 1){
+                 element.innerHTML = atributes[j] +'<br>'+ "by : " + '<style= "collor: #708090">'+atributes[j+1];
+                j++;
+            }
+            else   element.innerHTML = atributes[j];
+            row.appendChild(element);
+            }
+              table1.appendChild(row);
+
+     document.getElementsByTagName("table")[0].appendChild(row);
   }
 }

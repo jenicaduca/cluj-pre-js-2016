@@ -7,46 +7,47 @@ function Users(dataUsers){
   this.pass = dataUsers.password;
 
 }
-
-// var user = new Users();
+var temp = [];
+var nrUsers = parseUsers.length;
+// for(var i = 0; i < nrUsers; i++ ){
+//     localStorage.userName = parseUsers[i].email;
+//     localStorage.password = parseUsers[i].password;
+//     temp[i] = localStorage.setItem('parseUsers[i].email', 'parseUsers[i].password');
 //
-// var authenticate = function() {
-//       return user.email + ' ' + user.pass;
-//   };
-// LocalStorageManager.setValue("key",data);
-// LocalStorageManager.getValue("key");
+// // LocalStorageManager.setValue("key",data);
+// // LocalStorageManager.getValue("key");
+// console.log(temp[i]);
+// }
 
 function Authentication (){
-  var nrUsers = parseUsers.length;
+
    var bool= true;
 
    var emailDiv= document.getElementById("formText1").value;
    var passDiv= document.getElementById("formText2").value;
-  //  console.log('values:', emailDiv, passDiv)
 
-  //  authenticate( emailDiv, passDiv );
-  //  console.log(authenticate( emailDiv, passDiv ));
     for (var i = 0; i < nrUsers; i++) {
           if (parseUsers[i].email == emailDiv)
                {
-                //  var LocalStorageManager =   window.localStorage.setItem(emailDiv, JSON.stringify(value));
+                //  var LocalStorageManager =   window.localStorage.setItem(parseUsers[i].email);
+                //  console.log(LocalStorageManager);
                  if(parseUsers[i].password == passDiv)
                    {
 
-                    //  document.getElementById("mesageLogin").innerHTML = "login succes!!";
-                   window.location.replace = ("file:///home/jenica.duca/work/cluj-pre-js-2016/app/playlist_page.html");
+                     document.getElementById("mesageLogin").innerHTML = "login succes!!";
+                  //  window.location.replace = ("file:///home/jenica.duca/work/cluj-pre-js-2016/app/playlist_page.html");
                      break;
                   }
                  else
                  {
                     document.getElementById("mesageLogin").innerHTML = "Incorect password!!";
-                    bool=false;
+                    bool = false;
                     break;
 
                  }
                }  else {
                   document.getElementById("mesageLogin").innerHTML = "is not a user!!";
-                  bool=false;
+                  bool = false;
                 }
 
         }

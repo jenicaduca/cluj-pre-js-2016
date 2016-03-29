@@ -97,8 +97,13 @@ createPlaylist(parsedPlaylist[0].songs, listEl);
 // var nrSongs = parsedPlaylist[0].songs.length;
 
 var transformInMinutes = function (val){
-  var min = val / 60;
-  var minute = min.toFixed(0) + ":" + val % 60;
+  var minute;
+  if (val % 60 < 10){
+    minute = Math.floor(val/60) + ": 0" + val % 60;
+  } else
+        {
+           minute = Math.floor(val/60) + ":" + val % 60;
+      }
   return minute;
 };
 

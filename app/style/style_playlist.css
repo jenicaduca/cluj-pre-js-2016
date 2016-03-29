@@ -222,36 +222,30 @@
   visibility: hidden;
   position: absolute;
   margin-top: -600px;
-
 }
-
-.boxclose{
-  width: 10px;
-  height: 10px;
-  margin-top: 50px;
-}
-
-.boxcolse: hover{
-  width: 15px;
-  height: 15px;
-}
-
 
 td,th{
   border-bottom: 1px solid #D3D3D3;
+   border-spacing:0;
 }
+
+
 
 .tableSongs{
   width: 600px;
+  border-spacing:0;
+
 }
 
 #topTable{
   background-color: #D3D3D3;
+   border-spacing:0;
 }
 
-.changeBlue {
+.tableSongs tr{
   background-color: #FFF;
 }
-.changeBlue : hover{
+.tableSongs:hover tr{
   background-color: #ADD8E6;
+
 }

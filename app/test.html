@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
+        <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+        <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
+        <script src="http://backbonejs.org/backbone.js"></script>
+        <script type="text/javascript">
+            $(function() {
+              var response = [
+                {
+                  // image:"../core/assets/up-all-night-small.png",
+                  songAuthor: "Smiley",
+                  songLength: 74,
+                  songListened: 82,
+                  songTitle: "love love enemies love"
+                },
+                {
+                  // image:"../core/assets/up-all-night-small.png",
+                  songAuthor: "Dr. Dre",
+                  songLength: 186,
+                  songListened: 78,
+                  songTitle: "love love enemies pierdut"
+                },
+                {
+                songAuthor: "Andra",
+                songLength: 303,
+                songListened: 94,
+                songTitle: "ea money pierdut ea"
+              }
+              ];
+
+              var Song = Backbone.Model.extend({
+              });
+              var Songs = Backbone.Collection.extend({
+                model: Song
+              });
+              var songs = new Songs();
+              songs.set(response);
+
+              var SongView = Backbone.View.extend({
+                tagName: 'tr',
+                className: 'song-view',
+                template: _.template('<td class="tdSong"><img src= "../core/assets/up-all-night-small.png"><td class="tdSong"><%= songTitle %></td><td class="tdSong"><%= songAuthor %></td><td class="tdSong"><%= songLength %></td><td class="tdSong"><%= songListened %></td>'),
+                render: function () {
+                  this.$el.html(this.template(this.model.attributes));
+                  return this;
+                }
+              });
+
+              var SongsView = Backbone.View.extend({
+                template: _.template("<p>Playlist: </p><div class='listSong'></div><table class='songs-view'></table>"),
+                _nestedView: [],
+                renderNestedView: function(view, el) {
+                  this._nestedView.push(view);
+                  el.append(view.el);
+                },
+                render: function () {
+                  this.$el.html(this.template());
+
+                  var that = this;
+                  var partEl = $(this.el.querySelector('.songs-view'));
+
+                  this.collection.forEach(function(model) {
+                      var songView = new SongView({
+                        model: model
+                      });
+                      songView.render();
+
+                      that.renderNestedView(songView, partEl);
+                  });
+                return this;
+                }
+              });
+
+              var pageView = new SongsView({
+                el: document.getElementById('page'),
+                collection: songs
+              });
+              pageView.render();
+
+            });
+
+        </script>
+    </head>
+    <body>
+      <!-- <p>Hello!</p> -->
+      <div id="page"></div>
+    </body>
+</html>

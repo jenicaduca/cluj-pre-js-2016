@@ -94,8 +94,6 @@ createPlaylist(parsedPlaylist[0].songs, listEl);
 
 }
 
-// var nrSongs = parsedPlaylist[0].songs.length;
-
 var transformInMinutes = function (val){
   var minute;
   if (val % 60 < 10){

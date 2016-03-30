@@ -83,14 +83,11 @@
 
   width: 300px;
   height: 200px;
-  /*transition: all 1s linear;*/
+  transition: all 1s linear;
   transition: 0.5px;
   /*margin-top: -40px;*/
 }
 
-/*.contine-playlist:hover{
-  background-color: rgba(0, 0, 0, 0.5);
-}*/
 
 .pozz{
   width: 300px;
@@ -134,7 +131,7 @@
   font-size: 20px;
 }
 
-.toate-playlisturile{
+#toate-playlisturile{
     display: inline-block;
     margin-top: -80px;
     position: relative;
@@ -157,8 +154,8 @@
 .playlist button{
   visibility: hidden;
   position: absolute;
-  margin-top: -200px;
-  margin-left: -80px;
+  /*margin-top: -200px;
+  margin-left: -80px;*/
 }
 
 
@@ -175,17 +172,6 @@
 .playlist:hover button{
    visibility: visible;
 }
-
-
-/*.lista-melodi{
-  height: 0px;
-  width: 600px;
-  border-collapse: collapse;
-  border: 1px solid #000;
-  margin-bottom: -400px;
-  background-color: #FFF;
-}*/
-
 
 
 .top-lista{
@@ -234,6 +220,7 @@ td,th{
 .tableSongs{
   width: 600px;
   border-spacing:0;
+  text-align: center;
 
 }
 
@@ -248,4 +235,13 @@ td,th{
 .tableSongs:hover tr{
   background-color: #ADD8E6;
 
+}
+
+#tdSongImage td{
+  width: 50px;
+  height: 50px;
+}
+.song-items{
+  text-align: center;
+  display: inline-block;
 }

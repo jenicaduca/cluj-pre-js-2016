@@ -97,26 +97,21 @@
 }
 
 .playlist{
-  position: relative;
-  display: inline-block;
+  float: left;
   background-color: #FFF;
   height: 300px;
   width: 300px;
   border-collapse: collapse;
   border: 1px solid #B0E0E6;
-  margin-right: 40px;
-  /*transition: all 1s linear;*/
   transition: 0.5px;
-
-
 }
-
+#align-box{
+  width: 1000px;
+}
 .playlist:hover {
-	/*width: 400px;
-	height: 400px;*/
+   display: inline-block;
   box-shadow: 10px 10px 5px #888888;
   background-color: rgba(0, 0, 0, 0.3);
-
   transform: translate(0, -15px);
 }
 
@@ -131,11 +126,12 @@
   font-size: 20px;
 }
 
-#toate-playlisturile{
+#allPlaylists{
     display: inline-block;
-    margin-top: -80px;
+    /*margin-top: -80px;*/
     position: relative;
-    margin-left: -200px;
+    /*margin-left: -200px;*/
+    width: 1000px;
 }
 
 .bottom-page{
@@ -243,5 +239,9 @@ td,th{
 }
 .song-items{
   text-align: center;
+  display: inline-block;
+}
+
+#playlist-view-items{
   display: inline-block;
 }

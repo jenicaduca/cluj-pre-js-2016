@@ -1,33 +1,35 @@
-var PlaylistItemView = Backbone.View.extend({
-   className: 'playlist-items',
-  template: function(){
-  var fn = _.template($('script#playlist-view-items').html());
-   return fn.apply(this, arguments);
- },
-  render: function () {
+const PlaylistItemView = Backbone.View.extend({
+  className: 'playlist',
+  template() {
+    const fn = _.template($('script#playlist-view-items').html());
+    return fn.apply(this, arguments);
+  },
+  render() {
     this.$el.html(this.template(this.model.attributes));
     return this;
-  }
+  },
 });
 
 
-var PlaylistsView = Backbone.View.extend({
-  template:_.template("<div class='playlist-items'></div>"),
+const PlaylistsView = Backbone.View.extend({
+  template: _.template("<div class='playlist' id = 'align-box'></div>"),
   _nestedView: [],
-  renderNestedView: function(view, el) {
+  renderNestedView(view, el) {
     this._nestedView.push(view);
     el.append(view.el);
   },
-  render: function () {
+  render() {
     this.$el.html(this.template);
-    var that = this;
-    var partEl = $(this.el.querySelector('.playlist-items'));
+    const that = this;
+    const partEl = $(this.el.querySelector('.playlist'));
     this.collection.forEach(function(model) {
-        var songView = new PlaylistItemView({
-          model: model
-        });
-    songView.render();
-     that.renderNestedView(songView, partEl);
+      const songView = new PlaylistItemView({
+        model,
+      });
+      songView.render();
+      that.renderNestedView(songView, partEl);
     });
- }
+  },
 });
+
+export { PlaylistItemView, PlaylistsView };

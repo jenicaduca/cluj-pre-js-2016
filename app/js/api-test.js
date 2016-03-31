@@ -1,5 +1,5 @@
-var objJson = {
-    "success": {
+const objJson = {
+"success": {
         "total": 1
     },
     "contents": {

@@ -11,94 +11,23 @@
 </head>
 <body>
 
-  <script>
-    $(function(){
-     var playlistJSON = [
-             {
-               id:0,
-               title:"Playlist 1",
-               image:"../core/assets/up-all-night-small.png",
-               songs:["song1", "song2", "song3"]
-             },
-             {
-               id:1,
-               title:"Playlist 2",
-               image:"../core/assets/up-all-night-small.png",
-               songs:["song1", "song2", "song3"]
-             },
-             {
-               id:3,
-               title:"Playlist 3",
-               image:"../core/assets/up-all-night-small.png",
-               songs:["song1", "song2", "song3"]
-             }
-         ];
-         var play = new  PlaylistItems();
-         play.set(playlistJSON);
-         console.log(play);
-
-         var playlistView = new PlaylistsView({
-           el: document.getElementById('toate-playlisturile'),
-           collection: play
-         });
-        playlistView.render();
-
-       });
-       </script>
-  <script>
-    $(function(){
-     var songJSON = [
-       {
-                image : "../core/assets/up-all-night-small.png",
-                songAuthor : "Smiley",
-                songLength : 74,
-                songListened : 82,
-                songTitle : "love love enemies love"
-              },
-                {
-                  image : "../core/assets/up-all-night-small.png",
-                  songAuthor : "Dr. Dre",
-                  songLength : 186,
-                  songListened : 78,
-                  songTitle : "love love enemies pierdut"
-                },
-                {
-                image : "../core/assets/up-all-night-small.png",
-                songAuthor : "Andra",
-                songLength : 303,
-                songListened : 94,
-                songTitle : "ea money pierdut ea"
-              }
-            ];
-
-            var song = new  SongsItem();
-            song.set(songJSON);
-            console.log(song);
-
-            var songView = new SongsListView({
-              el: document.getElementById('showSongs'),
-              collection: song
-            });
-            songView.render();
-    });
-  </script>
   <script type= "text/template" id= "song-view-items">
-      <td class="tdSong"><img id= "tdSongImage" src= "<%= image %>"></td>
-      <td class="tdSong"><%= songTitle %><br> By: <%= songAuthor %></td>
-      <td class="tdSong"><%= transformInMinutes(songLength) %></td>
-      <td class="tdSong"><%= songListened %></td>
- </script>
+    <td class="tdSong"><img id= "tdSongImage" src= "<%= image %>"></td>
+    <td class="tdSong"><%= songTitle %><br> By: <%= songAuthor %></td>
+    <td class="tdSong"><%= transformInMinutes(songLength) %></td>
+    <td class="tdSong"><%= songListened %></td>
+</script>
 
- <script type= "text/template" id= "playlist-view-items">
-   <img src= "<%= image %>">
-   <span><%= title %></span>
-   <div class="asezare-buton">
-       <button class="element-creator" id="afiseaza" onclick="afisare('theDiv')"> Explore playlist</button>
+  <script type= "text/template" id= "playlist-view-items">
+    <img src= "<%= image %>">
+    <span><%= title %></span>
+    <div class="asezare-buton">
+      <button class="element-creator" id="afiseaza" onclick="afisare('theDiv')"> Explore playlist</button>
     </div>
- </script>
+  </script>
 
- <script>
- var transformInMinutes = function (val){
+  <script>
+   var transformInMinutes = function (val){
    var minute;
    if (val % 60 < 10){
      minute = Math.floor(val/60) + ": 0" + val % 60;
@@ -147,45 +76,34 @@
 
 
 <div class="bottom-page">
-  <div class = "playlist" >
-     <div  id="toate-playlisturile">
-</div>
 
-</div>
+  <div  id="allPlaylists" >  </div>
+
     <p class= "text-gri footer"><br><br>@2016 ACME DEVISION. ALL RICHTS RESERVED<p>
     <div class="lista-melodi" id="theDiv">
          <div class="top-lista" >
-           <!-- <img class= "boxclose" alt= "this is a img" src= "../core/assets/close-icon.png"> -->
            <img class="playlist-pozz" alt="this is a image" src="../core/assets/up-all-night-small.png" />
-             <p class="playlist-title" >Playing from: </p>
-             <p class="text-negru-playlist" >Up all night: The remixes radio</p>
+            <p class="playlist-title" >Playing from: </p>
+            <p class="text-negru-playlist" >Up all night: The remixes radio</p>
          </div>
-
-        <!-- <ul id = "mySongs" style="list-style-type: none"> -->
           <div >
              <table class = "tableSongs">
              <tr id = "topTable">
-                    <td> SONG</td>
-                    <td>   </td>
-                    <td> LENGTH </td>
-                     <td> LISTENED </td>
-                   </tr>
+                <td> SONG</td>
+                <td></td>
+                <td> LENGTH </td>
+                <td> LISTENED </td>
+                </tr>
              </table>
-           <div id="showSongs" calss = "tableSongs"> </div>
+           <div id="showSongs" class = "tableSongs"> </div>
 
        </div>
-        <!-- </ul> -->
-      </div>
+    </div>
 
 </div>
 
 <script	type="text/javascript" src="js/playlists.js"></script>
 <script	type="text/javascript" src="js/api-test.js"></script>
-<script type="text/javascript" src="Songs/modelSong.js"></script>
-<script type="text/javascript" src="Songs/collectionSong.js"></script>
-<script type="text/javascript" src="Songs/viewSong.js"></script>
-<script type="text/javascript" src="Playlists/playlistModel.js"></script>
-<script type="text/javascript" src="Playlists/playlistItemsView.js"></script>
-<script type="text/javascript" src="Playlists/playlistCollection.js"></script>
+<script src="../build/bundle.js"> </script>
 </body>
 <html>

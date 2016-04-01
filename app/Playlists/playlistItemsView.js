@@ -22,7 +22,7 @@ const PlaylistsView = Backbone.View.extend({
     this.$el.html(this.template);
     const that = this;
     const partEl = $(this.el.querySelector('.playlist'));
-    this.collection.forEach(function(model) {
+    this.collection.forEach(function (model) {
       const songView = new PlaylistItemView({
         model,
       });

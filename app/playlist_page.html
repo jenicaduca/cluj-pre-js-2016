@@ -8,23 +8,22 @@
   <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
   <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
   <script src="http://backbonejs.org/backbone.js"></script>
+
+  <script type= "text/template" id= "playlist-view-items">
+    <img  class= "pozz" src= "<%= imageLarge %>" />
+    <span><%= title %></span><br>
+    <span><%= description %></span>
+    <button class="element-creator" id="afiseaza" onclick="afisare('theDiv')"> Explore playlist</button>
+  </script>
 </head>
+
 <body>
 
   <script type= "text/template" id= "song-view-items">
-    <td class="tdSong"><img id= "tdSongImage" src= "<%= image %>"></td>
+    <td class="tdSong"><img class= "tdSongImage" src= "<%= image %>" /></td>
     <td class="tdSong"><%= songTitle %><br> By: <%= songAuthor %></td>
     <td class="tdSong"><%= transformInMinutes(songLength) %></td>
-    <td class="tdSong"><%= songListened %></td>
 </script>
-
-  <script type= "text/template" id= "playlist-view-items">
-    <img src= "<%= image %>">
-    <span><%= title %></span>
-    <div class="asezare-buton">
-      <button class="element-creator" id="afiseaza" onclick="afisare('theDiv')"> Explore playlist</button>
-    </div>
-  </script>
 
   <script>
    var transformInMinutes = function (val){
@@ -38,6 +37,7 @@
    return minute;
  };
  </script>
+
   <script>
   function afisare(id){
     var obj = document.getElementById(id);
@@ -51,7 +51,6 @@
     }
   }
   </script>
-
 
    <div class="page">
         <img class="photo_top" alt="this is a image" src="../core/assets/logo-top.png" />
@@ -77,9 +76,9 @@
 
 <div class="bottom-page">
 
-  <div  id="allPlaylists" >  </div>
+  <div class="playlists-container"></div>
 
-    <p class= "text-gri footer"><br><br>@2016 ACME DEVISION. ALL RICHTS RESERVED<p>
+
     <div class="lista-melodi" id="theDiv">
          <div class="top-lista" >
            <img class="playlist-pozz" alt="this is a image" src="../core/assets/up-all-night-small.png" />
@@ -95,12 +94,13 @@
                 <td> LISTENED </td>
                 </tr>
              </table>
-           <div id="showSongs" class = "tableSongs"> </div>
+           <div class = "tableSongs showSongs"> </div>
 
        </div>
     </div>
 
 </div>
+  <p class= "text-gri footer"><br><br>@2016 ACME DEVISION. ALL RICHTS RESERVED<p>
 
 <script	type="text/javascript" src="js/playlists.js"></script>
 <script	type="text/javascript" src="js/api-test.js"></script>

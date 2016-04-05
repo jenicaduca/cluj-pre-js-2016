@@ -1,6 +1,12 @@
-body{
-  background-image:url("../../core/assets/banner-app.jpg");
-  background-size: cover;
+/*body{*/
+  /*background-image:url("../../core/assets/banner-app.jpg");*/
+  /*background-size: cover;*/
+/*}*/
+
+#containerLogin{
+    background-image:url("../../core/assets/banner-app.jpg");
+    height: 300px;
+    margin-bottom: 20px;
 }
 
 .cont{
@@ -16,7 +22,7 @@ body{
 
 
 
-.box{
+#box{
   /*display: inline;*/
   position: relative;;
   background-color: #FFF;
@@ -24,8 +30,8 @@ body{
   width: 300px;
 
   color: #000;
-  margin: 200px auto;
-  padding: 20px;
+  /*margin: 200px auto;*/
+  /*padding: 20px;*/
 
 }
 

@@ -1,4 +1,4 @@
-import { SongListItemView } from './viewSong.js'
+import { SongListItemView } from './viewSong.js';
 const SongsListView = Backbone.View.extend({
   template: _.template("<table class='song-items'></table>"),
   _nestedView: [],

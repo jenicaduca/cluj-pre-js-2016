@@ -3,6 +3,7 @@
 <head>
   <title>Playlist</title>
   <link rel="stylesheet" type="text/css" href="style/style_playlist.css">
+  <link rel="stylesheet" type="text/css" href="style/style_formular.css">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="http://backbonejs.org/test/vendor/underscore.js"></script>
   <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
@@ -25,6 +26,8 @@
     <td class="tdSong"><%= transformInMinutes(songLength) %></td>
 </script>
 
+<!-- <script type= "text/template" id="login-view-items">
+</script> -->
   <script>
    var transformInMinutes = function (val){
    var minute;
@@ -51,6 +54,16 @@
     }
   }
   </script>
+<div id = "containerLogin">
+  <div id = "box">
+    <img alt="this is a image" src="../core/assets/logo-color.png">
+    <p>Sign into your ACME account</p>
+    <p id = "mesageLogin"> </p>
+
+    <p>Don't have an account?
+    <a href="first_page.html">Sign up here</a></p>
+  </div>
+</div>
 
    <div class="page">
         <img class="photo_top" alt="this is a image" src="../core/assets/logo-top.png" />

@@ -9,22 +9,48 @@
   <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
   <script src="http://backbonejs.org/docs/js/jquery.lazyload.js"></script>
   <script src="http://backbonejs.org/backbone.js"></script>
+  <script type="text/javascript" src="./test.js"></script>
 
-  <script type= "text/template" id= "playlist-view-items">
+  <script type= "text/template" id="playlist-view-items">
     <img  class= "pozz" src= "<%= imageLarge %>" />
     <span><%= title %></span><br>
     <span><%= description %></span>
-    <button class="element-creator" id="afiseaza" onclick="afisare('theDiv')"> Explore playlist</button>
+    <button class="element-creator" type="button"> Explore playlist</button>
+    <div class="playlist-details"></div>
   </script>
 </head>
 
 <body>
-
+  <script type= "text/template" id="songs-playlist">
+    <div class="lista-melodi">
+        <div class="top-lista" >
+         <img class="playlist-pozz" alt="this is a image" src="../core/assets/up-all-night-small.png" />
+          <p class="playlist-title" >Playing from: </p>
+          <p class="text-negru-playlist" ><%=this.model.attributes.title %></p>
+        </div>
+        <div class="table-playlist">
+           <table id="tableSongs">
+            <thead>
+              <tr id = "topTable">
+                <th> SONG</th>
+                <th> LENGTH </th>
+              </tr>
+            </thead>
+            <tbody class="showSongs"></tbody>
+          </table>
+        </div>
+    </div>
+  </script>
   <script type= "text/template" id= "song-view-items">
-    <td class="tdSong"><img class= "tdSongImage" src= "<%= image %>" /></td>
-    <td class="tdSong"><%= songTitle %><br> By: <%= songAuthor %></td>
-    <td class="tdSong"><%= transformInMinutes(songLength) %></td>
-</script>
+    <tr>
+      <td>
+        <img src="<%=this.attributes.image%>"/>
+        <h2><%=this.attributes.songTitle%></h2>
+        <p><%=this.attributes.songAuthor%></p>
+      </td>
+      <td><%=this.attributes.songLength%></td>
+    </tr>
+  </script>
 
 <!-- <script type= "text/template" id="login-view-items">
 </script> -->
@@ -42,17 +68,9 @@
  </script>
 
   <script>
-  function afisare(id){
-    var obj = document.getElementById(id);
-    var buton = document.getElementById('afiseaza');
-    if(obj.style.visibility == 'visible')
-      {
-        obj.style.visibility = 'hidden';
-    }  else
-       {
-       obj.style.visibility = 'visible';
-    }
-  }
+  $('button').click(function(el){
+    console.log(el, '???......');
+  });
   </script>
 <div id = "containerLogin">
   <div id = "box">
@@ -92,25 +110,6 @@
   <div class="playlists-container"></div>
 
 
-    <div class="lista-melodi" id="theDiv">
-         <div class="top-lista" >
-           <img class="playlist-pozz" alt="this is a image" src="../core/assets/up-all-night-small.png" />
-            <p class="playlist-title" >Playing from: </p>
-            <p class="text-negru-playlist" >Up all night: The remixes radio</p>
-         </div>
-          <div >
-             <table class = "tableSongs">
-             <tr id = "topTable">
-                <td> SONG</td>
-                <td></td>
-                <td> LENGTH </td>
-                <td> LISTENED </td>
-                </tr>
-             </table>
-           <div class = "tableSongs showSongs"> </div>
-
-       </div>
-    </div>
 
 </div>
   <p class= "text-gri footer"><br><br>@2016 ACME DEVISION. ALL RICHTS RESERVED<p>
